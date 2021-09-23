@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>{% if title %}{{ title }}{% else %}Neurothrone{% endif %}</title>
+    {% load static %}
+    <!-- CSS & ICONS -->
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="{% static 'bootstrap/webfonts/bootstrap-icons.css' %}">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+</head>
+<body>
+
+<!-- HEADER -->
+{% include "layout/header.html" %}
+
+<!-- MESSAGES -->
+{% include "messages/general.html" %}
+
+<!-- CONTENT -->
+<main>
+    {% block content %}{% endblock %}
+</main>
+
+<!-- FOOTER -->
+{% include "layout/footer.html" %}
+
+<!-- SCRIPTS -->
+{% block scripts %}
+    <!-- the order of scripts matter -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Bootstrap Core JS -->
+    <script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/base.js' %}"></script>
+{% endblock %}
+
+</body>
+</html>
